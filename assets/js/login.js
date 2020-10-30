@@ -2,6 +2,7 @@ $(function () {
   $('#link_login').on('click', function () {
     $('.loginBox').hide()
     $('.regBox').show()
+    console.log('nt');
 
   })
   $('#link_reg').on('click', function () {
