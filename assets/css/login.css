@@ -27,9 +27,14 @@ body{
 }
 .icon-location {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
 }
 .layui-input {
-  padding: 0 40px;
+  padding: 0 30px;
+}
+.links {
+  display: flex;
+  justify-content: flex-end;
+
 }
