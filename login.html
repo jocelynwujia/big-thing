@@ -4,8 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
-  
+  <div class="layui-main">
+    <img src="assets/images/logo.png" alt="">
+  </div>
+  <div class="loginAndRegBox">
+    <div class="loginTitle"></div>
+    <div class="loginBox" style="display: none;">
+      <form class="layui-form" action="">
+        <!-- 用户 -->
+        <div class="layui-form-item icon-input">
+          <i class="layui-icon layui-icon-username icon-location" style="font-size: 30px; color: #1E9FFF;"></i>  
+          <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+            class="layui-input">
+        </div>
+        <!-- 密码 -->
+        <div class="layui-form-item icon-input">
+          <i class="layui-icon layui-icon-password icon-location" style="font-size: 30px; color: #1E9FFF;"></i>  
+          <input type="password" name="title" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+            class="layui-input">
+        </div>
+        <!-- 提交 -->
+        <div class="layui-form-item">
+          <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
+        </div>
+
+      </form>
+      <a href="javascript:;" id="link_login">去登录页面</a>
+    </div>
+
+    <!-- 登录 -->
+    <div class="regBox">
+      <a href="javascript:;" id="link_reg">去注册页面</a>
+    </div>
+    <script src="./assets/lib/jquery.js"></script>
+    <script src="./assets/js/login.js"></script>
+
+  </div>
 </body>
 </html>
