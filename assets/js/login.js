@@ -12,6 +12,7 @@ $(function () {
   })
   //自定义校验规则
   let form = layui.form;
+  let msg = layer.msg;
   form.verify({
     pwd: [
       /^[\S]{6,12}$/
@@ -33,8 +34,8 @@ $(function () {
     }
     $.post('http://ajax.frontend.itheima.net/api/reguser', data, function (res) {
       console.log(res)
-      if(res.status !== 0) return console.log(res.message)
-      console.log('注册成功')
+      if(res.status !== 0) return layer.msg(res.message)
+      layer.msg('注册成功')
 
     })
 
