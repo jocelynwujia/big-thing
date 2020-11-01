@@ -36,7 +36,10 @@
 
   <!-- 第二行的按钮区域 -->
   <div class="row2">
-    <button type="button" class="layui-btn">上传</button>
+    <!-- 上传按钮模拟input选择框，事件上还是input框在选择文件，故添加一个input表单
+ -->
+    <input type="file" id="file" accept="image/png,image/jpeg"/>
+    <button type="button" class="layui-btn" id="btnSubmitImage">上传</button>
     <button type="button" class="layui-btn layui-btn-danger">确定</button>
   </div>
   </div>
@@ -45,6 +48,7 @@
 <script src="/assets/lib/jquery.js"></script>
 <script src="/assets/lib/cropper/Cropper.js"></script>
 <script src="/assets/lib/cropper/jquery-cropper.js"></script>
+<script src="/assets/lib/layui/layui.all.js"></script>
 <script src="/assets/js/user/user_avatar.js"></script>
 </body>
 
