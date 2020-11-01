@@ -61,7 +61,7 @@ $(function () {
           //拿到的数据里面有一个token ，是访问有权限接口的 存储到本地存储
           localStorage.setItem('token',res.token)
           //同时页面跳转到后台页面首页
-          // location.href = '/index.html'
+          location.href = '/index.html'
 }
 })
 })
