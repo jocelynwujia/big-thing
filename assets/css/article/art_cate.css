@@ -7,3 +7,12 @@ body{
   padding: 15px;
   background-color: #f2f3f5;
 }
+#header{
+  display: flex;
+  justify-content: space-between;
+
+}
+#layui-form {
+  padding-top: 20px;
+  padding-right: 30px;
+}
