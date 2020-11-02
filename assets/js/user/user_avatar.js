@@ -19,21 +19,50 @@ $(function () {
   })
   //给文件筐绑定change事件
   $('#file').on('change', function (e) {
-    console.log(e.target.files)
+    // console.log(e.target.files)
     var fileList = e.target.files
-    console.log(fileList)
+    // console.log(fileList)
     if (fileList.length === 0) {
       return layui.layer.msg('请选择图片')
     }
     //拿到用户选择的文件
     var file = e.target.files[0]
     // 根据选择的文件，创建一个对应的 URL 地址：
-    var newImgURL = URL.createObjectURL(file)
+    var newImgURL = URL.createObjectURL(file) //blob格式
     // 先`销毁`旧的裁剪区域，再`重新设置图片路径`，之后再`创建新的裁剪区域`：
     $image
       .cropper('destroy')      // 销毁旧的裁剪区域
       .attr('src', newImgURL)  // 重新设置图片路径
       .cropper(options)        // 重新初始化裁剪区域
   })
+  //给上传按钮绑定点击事件
+  $('#btnUpload').on('click', function (e) {
+    console.log(e)
+    // 拿到裁剪之后的图片
+    var dataURL = $image
+      .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
+        width: 100,
+        height: 100
+      })
+      .toDataURL('image/png')       // 将 Canvas 画布上的内容，转化为 base64 格式的字符串
+    // 将数据上传到服务器
+    $.ajax({
+      type: 'POST',
+      url: '/my/update/avatar',
+      data: {
+        avatar: dataURL
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.status !== 0) return layui.layer.msg('图片上传失败')
+        layui.layer.msg('图片上传成功')
+        //将上传的头像渲染到页面 调用getUserInfo()
+        window.parent.getUserInfo()
+      }
+
+
+    })
+  })
+
 
 })
